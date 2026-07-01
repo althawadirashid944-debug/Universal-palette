@@ -1,6 +1,7 @@
 # Universal Palette
 
 A lightweight Linux utility for launching a customizable command palette with configurable settings.
+[ Theres a image.png file in the folder if you want to check it out ] 
 
 ---
 
@@ -11,6 +12,7 @@ A lightweight Linux utility for launching a customizable command palette with co
 - Lightweight and minimal design
 - Easy integration with any Linux desktop environment
 - Works without requiring a specific window manager
+- You can also use web search : Type a question hit enter your default browser opens with that question , neat right? 
 
 ---
 

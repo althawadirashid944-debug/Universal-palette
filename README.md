@@ -36,6 +36,7 @@ If you use hyprland or similar go into your config file and type: for example
 bind = SUPER, M, exec, python3 ~/path-or-folder-youdownloaded-it-in/Universal palette/main.py
 # THE FOLDER USES A SPACE so Universal palette 
 
+```
 ## CONFIGURATION EXAMPLE
 [ui]
 theme= "dark"

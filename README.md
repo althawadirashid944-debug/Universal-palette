@@ -29,6 +29,13 @@ KEYBINDS should be handled  by your window manager or desktop environment NOT th
 Extra things :
 Project is in early development, but it is quite stable for now. Config format may change over time , YOUR contributions and  feedback ARE very welcome.
 
+
+## KEYBINDING
+If you use hyprland or similar go into your config file and type: for example 
+```ini
+bind = SUPER, M, exec, python3 ~/path-or-folder-youdownloaded-it-in/Universal palette/main.py
+# THE FOLDER USES A SPACE so Universal palette 
+
 ## CONFIGURATION EXAMPLE
 [ui]
 theme= "dark"

@@ -49,7 +49,9 @@ history=true
 {screenshots will be provided as image files feel free to check them out in the project folder]
 
 ## DEPENDENCIES
-It uses rapidfuzz
-so to install: python -m pip install rapidfuzz  OR python3 -m pip install rapidfuzz
-and tomllib so : python -m pip install tomllib OR python3 -m pip install tomllib
+It uses rapidfuzz and tomllib
+install rapidfuzz : Sudo pacman -S python-rapidfuzz 
+IF you are on python 3.11+ you already have tomllib if not then install via : sudo pacman -S python-tomli
+
+
 

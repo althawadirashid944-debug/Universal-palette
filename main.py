@@ -63,9 +63,12 @@ class PaletteWindow(Gtk.ApplicationWindow):
         print([app for app in self.apps.keys() if "fire" in app]) 
 
     def on_enter(self, entry):
-        text = entry.get_text()
+        text = entry.get_text() 
+        if not text:
+            return 
         self.handle_command(text)
-        entry.set_text("")
+        entry.set_text("") 
+        self.hide() 
 
     def handle_command(self, text):
      text = text.strip()
@@ -96,7 +99,8 @@ class PaletteWindow(Gtk.ApplicationWindow):
 
      if app:
         self.launch(app)
-        return
+        return 
+        
 
      
      # 4. fallback → web search
@@ -113,10 +117,12 @@ class PaletteWindow(Gtk.ApplicationWindow):
             return
 
         subprocess.Popen(app.split())
-        print("Opened:", app)
+        print("Opened:", app) 
+        
 
      except Exception as e:
-        print("Launch error:", e)
+        print("Launch error:", e) 
+        self.cmd_exit() 
     def cmd_exit(self, args):
         print("Exiting application...")
         self.get_application().quit()
@@ -124,19 +130,23 @@ class PaletteWindow(Gtk.ApplicationWindow):
     def cmd_open(self, args):
      if not args:
         print("No application specified")
-        return
+        return 
+        
 
      app = args.strip() 
      if self.open_flatpak(args):
         print(f"Flatpak opened: {args}")
         return
+        
 
      try:
         subprocess.Popen(app.split())
         print(f"Opened: {app}")
         return 
+        self.cmd_exit() 
      except Exception:
-        pass
+        pass 
+        
 
      try:
         subprocess.Popen(["gtk-launch", app])
@@ -144,7 +154,7 @@ class PaletteWindow(Gtk.ApplicationWindow):
         return
      except Exception:
         pass 
-
+        
       
     def load_apps(self):
       apps = {}
@@ -271,7 +281,8 @@ class PaletteWindow(Gtk.ApplicationWindow):
     def file_search(self, args):
         if not args:
             print("No search query provided.")
-            return
+            return 
+            
 
         matches = []
 
@@ -289,15 +300,18 @@ class PaletteWindow(Gtk.ApplicationWindow):
         if not args:
             print("No search query provided.")
             return
+            
 
         query = urllib.parse.quote(args) 
         url = f"https://www.google.com/search?q={query}"
 
         try:
             subprocess.Popen(["xdg-open", url])
-            print(f"Opened web search for: {args}")
+            print(f"Opened web search for: {args}") 
+            
         except Exception as e:
             print(f"Failed to open web search: {e}") 
+            
 
 
 
